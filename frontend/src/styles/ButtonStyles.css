@@ -1,0 +1,9 @@
+.btn-secondary {
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+}
+
+.btn-block {
+	width: 80%;
+	margin: 1% 10%;
+}

@@ -1,0 +1,36 @@
+.container {
+	background-color: var(--color-primary);
+	height: 60px;
+	color: var(--color-text);
+	font-size: 35px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+	font-size: 1.5em;
+}
+
+::placeholder {
+	color: var(--color-text);
+	opacity: 0.8;
+	text-align: center;
+}
+
+.searchBar {
+	background-color: var(--color-search-form);
+	font-family: Roboto;
+	color: var(--color-text);
+	font-size: 17px;
+	font-weight: bold;
+	width: 50%;
+	height: 35px;
+	border-radius: 0.5em;
+	border: none;
+}
+
+@media (max-width: 800px) {
+	.searchBar {
+		display: none;
+	}
+}
