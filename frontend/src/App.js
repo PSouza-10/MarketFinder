@@ -3,29 +3,47 @@ import './styles/global.css';
 import Header from './components/Header';
 import Card from './components/UI/Card';
 import CardGroup from './components/CardGroup';
-
+import { Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-function App() {
-	const products = useSelector((state) => state.Product.items);
+import AboutPage from './components/AboutPage';
 
+function App() {
 	return (
 		<div className="App">
 			<Header>MarketFinder</Header>
-			<CardGroup>
-				{products.map(({ Nome, image, Quantidade, Categoria, Valor }) => (
-					<Card
-						cardImg={image}
-						title={Nome}
-						other={{
-							Quantidade,
-							Categoria,
-							Valor
-						}}
-					/>
-				))}
-			</CardGroup>
+
+			<Routes />
 		</div>
 	);
 }
+
+const Routes = () => {
+	const products = useSelector((state) => state.Product.items);
+
+	return (
+		<Switch>
+			<Route path="/about" exact render={() => <AboutPage />} />
+			<Route
+				path="/"
+				exact
+				render={() => (
+					<CardGroup>
+						{products.map(({ Nome, image, Quantidade, Categoria, Valor }) => (
+							<Card
+								cardImg={image}
+								title={Nome}
+								other={{
+									Quantidade,
+									Categoria,
+									Valor
+								}}
+							/>
+						))}
+					</CardGroup>
+				)}
+			/>
+		</Switch>
+	);
+};
 
 export default App;
