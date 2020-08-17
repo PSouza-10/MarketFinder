@@ -5,7 +5,7 @@ import Card from './components/UI/Card';
 import CardGroup from './components/CardGroup';
 import { Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import AboutPage from './components/AboutPage';
+import AboutPage from './components/AboutPage'
 
 function App() {
 	return (

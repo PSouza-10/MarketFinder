@@ -1,7 +1,3 @@
-.app{
-	border-right: 100px solid var(--color-text);
-}
-
 .container {
 	background-color: var(--color-primary);
 	height: 60px;
@@ -11,40 +7,33 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 7px 20px;
-	font-size: 30px;
+	font-size: 18pt;
 }
 
-.container#header-brand{
+.header-brand{
 	font-family: Roboto;
-	display: flex;
-	align-items: center;
-	padding: 0 40px;
-}
-
-ul {
-	list-style: none;
-	padding-left: 70px;
-}
-
-li {
-	display: inline;
-	padding: 0 10px;
 }
 
 .headerLink {
 	text-decoration: none;
-	transform: opacity 0.2s;
-	font-size: 23px;
+	font-size: 16pt;
+	background-color: inherit;
 }
 
-.headerLink:hover{
-	opacity: 0.8;
+ul { 
+	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: stretch;
+	display: none;
+	align-self: stretch;
 }
 
-::placeholder {
-	color: var(--color-text);
-	opacity: 0.8;
-	text-align: left;
+li {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+
 }
 
 .searchBar {
@@ -56,14 +45,47 @@ li {
 	width: 25%;
 	height: 35px;
 	border-radius: 0.5em;
+	display: none;
+	align-items: center;
+}
+
+.searchBar > input {
+	background-color: inherit;
+	color : inherit;
 	border: none;
+	width: 90%;
+	border-radius: 0.5em;
 	text-indent: 25px;
 }
 
+.searchBar > .icon {
+	cursor: pointer;
+}
 
+::placeholder {
+	color: var(--color-text);
+	opacity: 0.8;
+	text-align: left;
+}
 
-@media (max-width: 800px) {
-	.searchBar {
-		display: none;
+.hamburguerMenu{
+	flex-shrink: 0;
+	width : 32px;
+	height : 32px;
+	cursor: pointer;
+
+}
+
+@media (min-width : 769px){
+	.hamburguerMenu{
+		display:none
+	}
+	ul{
+		display: inherit;
+	}
+
+	.searchBar{
+		display: flex;
 	}
 }
+
