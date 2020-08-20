@@ -1,7 +1,7 @@
 .wrapper {
   display : flex;
   flex-direction :column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;  
   flex: 1;
   padding: 30px 20px;
@@ -18,12 +18,18 @@
 .cont{
     display: flex;
     flex-direction: column;
+    flex: 1;
     justify-content: space-between;
 }
 
 @media (min-width:768px){
     .cont{
         flex-direction: row;
+        justify-content: flex-start;
     }
+    .wrapper {
+        justify-content: flex-start
+    
+      }
 }
 /*Paulinho que fez isso, ele é um Deus*/

@@ -1,6 +1,7 @@
 .container {
+
 	background-color: var(--color-primary);
-	height: 60px;
+	max-height: auto;
 	color: var(--color-text);
 	font-weight: bold;
 	display: flex;
@@ -8,16 +9,28 @@
 	justify-content: space-between;
 	padding: 7px 20px;
 	font-size: 18pt;
+	flex-wrap: wrap;
+	
 }
 
 .header-brand{
 	font-family: Roboto;
+	
 }
 
-.headerLink {
+.firstUl .headerLink{
+	padding-right: -150px;
+}
+
+ .headerLink {
 	text-decoration: none;
 	font-size: 16pt;
 	background-color: inherit;
+	transition: opacity 0.1s;
+}
+
+.headerLink:hover {
+	opacity: 0.6;
 }
 
 ul { 
@@ -25,14 +38,15 @@ ul {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: stretch;
-	display: none;
-	align-self: stretch;
+	
+	flex-direction: column;
+	
 }
 
 li {
 	display: flex;
 	align-items: center;
-	margin-right: 10px;
+	margin-right: 20px;
 
 }
 
@@ -42,11 +56,19 @@ li {
 	color: var(--color-text);
 	font-size: 17px;
 	font-weight: bold;
-	width: 25%;
-	height: 35px;
+	justify-content: space-between;
+	flex-grow:0.4;
+	height: 35px; 
+	padding-right: 5px;
 	border-radius: 0.5em;
-	display: none;
+	display: flex;
 	align-items: center;
+	transition : flex 0.2s ease-out;
+}
+
+.searchBar:focus-within{
+	flex-grow: 0.7;
+	border: 1px solid white;
 }
 
 .searchBar > input {
@@ -63,7 +85,7 @@ li {
 }
 
 ::placeholder {
-	color: var(--color-text);
+	color: var(--color-tex);
 	opacity: 0.8;
 	text-align: left;
 }
@@ -73,6 +95,7 @@ li {
 	width : 32px;
 	height : 32px;
 	cursor: pointer;
+	
 
 }
 
@@ -81,11 +104,22 @@ li {
 		display:none
 	}
 	ul{
-		display: inherit;
+		display: flex;
+		flex-direction:row;
 	}
 
 	.searchBar{
 		display: flex;
 	}
+
+	.break{
+		display: none;
+		flex-basis: 0%;
+	}
+
 }
 
+.break{
+	flex-basis: 100%;
+	height:5px;
+}

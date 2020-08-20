@@ -10,5 +10,8 @@
   },
   "scripts": {
     "dev": "concurrently \"npm start --prefix frontend\" \" npm start --prefix backend\" "
+  },
+  "dependencies": {
+    "styled-components": "^5.1.1"
   }
 }
